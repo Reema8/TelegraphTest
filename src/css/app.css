@@ -1,0 +1,136 @@
+@import 'core/reset.css';
+@import 'elements/site-logo.css';
+body {
+	width: 50%;
+	height: 600px;
+	/*background-color: blue;*/
+	position: absolute;
+	/*Can also be `fixed`*/
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	/*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+	max-width: 100%;
+	max-height: 100%;
+	overflow: auto;
+}
+
+.main_container {
+	box-sizing: border-box;
+}
+
+
+/* Create two equal columns that floats next to each other */
+
+.column {
+	width: 100%;
+	padding: 10px;
+	padding-right: 0;
+}
+
+
+/* Clear floats after the columns */
+
+.row {
+	display: flex;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.flex-parent-element {
+	display: flex;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.flex-child-element {
+	flex: 1;
+	margin: 10px;
+}
+
+.flex-child-element:first-child {
+	margin-right: 20px;
+}
+
+.userName {
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+
+.userCommentSection {
+	padding-bottom: 15px;
+}
+
+
+/*.userLikesDesktop{
+	padding-bottom: 3.2rem;
+}
+.column:first-child{
+	padding-top:1rem;
+}
+.mainSection, .userLikesDesktop{
+	border-bottom: 1px solid #ccc;
+}
+.column:nth-child(n+1) {
+	padding-top:0.65rem;
+}*/
+
+.mainCommentSection {
+	display: flex;
+	border-bottom: 1px solid #ccc;
+	padding-top: 1rem;
+}
+
+.mainSection {
+	width: 100%;
+}
+
+.likesSection {
+	margin-left: 1.5rem;
+	border: 1px solid;
+	padding: 5px;
+	border-radius: 10px;
+	cursor:pointer;
+}
+
+.sortSection {
+	margin-left: 30rem;
+}
+
+#commentsNumber {
+	margin-left: 1rem;
+}
+
+.column_mobile {
+	font-weight: bold;
+}
+
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 600px) {
+	.column {
+		width: 100%;
+	}
+	.sortSection {
+		margin-left: 8rem;
+	}
+	.mainCommentSection {
+		display: block;
+	}
+	body {
+		width: 90%;
+	}
+	.column_mobile {
+		padding-bottom: 1rem;
+	}
+}
